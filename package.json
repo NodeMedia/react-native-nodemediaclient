@@ -1,11 +1,12 @@
 {
   "name": "react-native-nodemediaclient",
   "version": "0.1.2",
-  "description": "",
+  "description": "React Native nodemediaclient",
+  "homepage": "https://github.com/takeerdevs/react-native-nodemediaclient#readme",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mingliang Chen",
-  "license": ""
+  "license": "MIT"
 }
