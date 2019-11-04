@@ -1,7 +1,7 @@
 {
   "name": "react-native-nodemediaclient",
   "version": "0.1.4",
-  "description": "",
+  "description": "This project is the react-native packaging of NodeMediaClient-Android and NodeMediaClient-iOS SDK.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
