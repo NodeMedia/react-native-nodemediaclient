@@ -125,7 +125,7 @@ const requestCameraPermission = async () => {
 In the official version, you can apply permission on the home page first, and then jump to the live page after you have permission.
 
 ## Note for android
-If you have enabled progaurd in release don't forget to add this to `proguard-rules.pro` file:
+If you have enabled proguard in release don't forget to add this to `proguard-rules.pro` file:
 ```
 -keep class cn.nodemedia.** {*;} 
 ```
