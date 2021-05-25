@@ -94,4 +94,14 @@ RCT_EXPORT_METHOD(flashEnable:(nonnull NSNumber *)reactTag enable:(BOOL)enable)
    }];
 }
 
+RCT_EXPORT_METHOD(setVideoParamPreset:(nonnull NSNumber *)reactTag video:(NSDictionary *)video)
+{
+  
+  [self.bridge.uiManager addUIBlock:
+   ^(__unused RCTUIManager *uiManager, NSDictionary<NSNumber *, RCTNodeCameraView *> *viewRegistry){
+     RCTNodeCameraView *view = viewRegistry[reactTag];
+     [view setVideoParamPreset:video];
+   }];
+}
+
 @end

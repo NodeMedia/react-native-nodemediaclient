@@ -29,6 +29,6 @@
 -(int)start;
 -(int)stop;
 -(int)switchCamera;
-
+-(void)setVideoParamPreset:NSDictionary;
 
 @end

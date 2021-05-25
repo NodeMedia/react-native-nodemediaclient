@@ -70,6 +70,13 @@
 }
 
 - (void)setVideo:(NSDictionary *)video {
+  [self setVideoParamPreset:video];
+  if(_autopreview && _camera) {
+    [_np startPreview];
+  }
+}
+
+- (void)setVideoParamPreset:(NSDictionary *)video {
   _video = video;
   int videoPreset = [[video objectForKey:@"preset"] intValue];
   int videoFPS = [[video objectForKey:@"fps"] intValue];
@@ -77,9 +84,6 @@
   int videoProfile = [[video objectForKey:@"profile"] intValue];
   BOOL videoFrontMirror = [[video objectForKey:@"videoFrontMirror"] boolValue];
   [_np setVideoParamPreset:videoPreset fps:videoFPS bitrate:videoBitrate profile:videoProfile frontMirror:videoFrontMirror];
-  if(_autopreview && _camera) {
-    [_np startPreview];
-  }
 }
 
 - (void)setDenoise:(BOOL)denoise {

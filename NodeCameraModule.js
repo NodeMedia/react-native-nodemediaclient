@@ -56,6 +56,14 @@ class NodeCameraView extends Component {
     );
   }
 
+  setVideoParamPreset(video) {
+    UIManager.dispatchViewManagerCommand(
+      findNodeHandle(this.refs[RCT_VIDEO_REF]),
+      UIManager.getViewManagerConfig('RCTNodeCamera').Commands.setVideoParamPreset,
+      [video]
+    );
+  }
+
   start() {
     UIManager.dispatchViewManagerCommand(
       findNodeHandle(this.refs[RCT_VIDEO_REF]),
