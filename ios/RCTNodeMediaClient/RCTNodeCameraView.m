@@ -30,6 +30,7 @@
     _audio = nil;
     _video = nil;
     _onChange = nil;
+    _onCapturePicture = nil;
   }
   return self;
 }
@@ -124,5 +125,15 @@
 -(int)switchCamera {
   return [_np switchCamera];
 }
+
+-(void)capturePicture {
+  return [_np capturePicture:^(UIImage * _Nullable picture) {
+    NSData *pictureData = UIImagePNGRepresentation(picture);
+    NSString *pictureBase64 = [pictureData base64EncodedStringWithOptions:0];
+    self.onCapturePicture(@{@"picture":pictureBase64});
+  }];
+}
+
+
 
 @end

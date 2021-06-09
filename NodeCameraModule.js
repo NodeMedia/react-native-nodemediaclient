@@ -23,6 +23,13 @@ class NodeCameraView extends Component {
     }
     this.props.onStatus(event.nativeEvent.code, event.nativeEvent.msg);
   }
+  _onCapturePicture(event) {
+    if (!this.props.onCapturePicture) {
+      return;
+    }
+
+    this.props.onCapturePicture(event.nativeEvent.picture);
+  }
 
   switchCamera() {
     UIManager.dispatchViewManagerCommand(
@@ -72,11 +79,21 @@ class NodeCameraView extends Component {
     );
   }
 
+  capturePicture() {
+    UIManager.dispatchViewManagerCommand(
+      findNodeHandle(this.refs[RCT_VIDEO_REF]),
+      UIManager.getViewManagerConfig('RCTNodeCamera').Commands.capturePicture,
+      null
+    );
+  }
+
+
   render() {
     return <RCTNodeCamera
       {...this.props}
       ref={RCT_VIDEO_REF}
       onChange={this._onChange.bind(this)}
+      onCapturePicture={this._onCapturePicture.bind(this)}
     />;
   };
 }
@@ -106,11 +123,12 @@ NodeCameraView.propTypes = {
   smoothSkinLevel: PropTypes.oneOf([0, 1, 2, 3, 4, 5]),
   cryptoKey:PropTypes.string,
   onStatus: PropTypes.func,
+  onCapturePicture: PropTypes.func,
   ...View.propTypes // 包含默认的View的属性
 };
 
 const RCTNodeCamera = requireNativeComponent('RCTNodeCamera', NodeCameraView, {
-  nativeOnly: { onChange: true }
+  nativeOnly: { onChange: true, onCapturePicture: true }
 });
 
 module.exports = NodeCameraView;

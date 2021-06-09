@@ -21,6 +21,7 @@
 @property (nonatomic) NSInteger smoothSkinLevel;
 @property (strong, nonatomic) NSString *cryptoKey;
 @property (nonatomic, copy) RCTBubblingEventBlock onChange;
+@property (nonatomic, copy) RCTBubblingEventBlock onCapturePicture;
 
 @property (nonatomic) BOOL flashEnable;
 
@@ -29,6 +30,6 @@
 -(int)start;
 -(int)stop;
 -(int)switchCamera;
-
+-(void)capturePicture;
 
 @end
