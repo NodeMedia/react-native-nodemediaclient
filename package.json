@@ -1,0 +1,9 @@
+{
+  "name": "react-native-nodemediaclient",
+  "version": "0.3.5",
+  "description": "This project is the react-native packaging of NodeMediaClient-Android and NodeMediaClient-iOS SDK.",
+  "main": "src/index",
+  "author": "Chen Mingliang",
+  "license": "",
+  "homepage": "https://github.com/NodeMedia/react-native-nodemediaclient"
+}
