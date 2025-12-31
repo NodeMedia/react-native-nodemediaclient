@@ -7,6 +7,9 @@ Complete live publish and play functions, providing the exact same API call. You
 
 A commercial license is required.
 
+## This project is no longer being maintained. Please use the Expo packaged version instead.
+https://github.com/NodeMedia/expo-nodemediaclient
+
 ## 1.Install
 npm i react-native-nodemediaclient
 
